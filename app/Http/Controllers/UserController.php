@@ -18,19 +18,23 @@ class UserController extends Controller
     	return view('users.trash',compact('users'));
     }
 
+
+// restaurer
     public function restaure(User $user)
     {
     	$user->restaure();
     	return back()->with('info','Restauration Reussie');
     }
 
+
+// suppression
     public function destroy(User $user)
     {
-    	// dd($user);
     	User::destroy($user->id);
     	return back()->with('info','Suppression Reussie!');
     }
 
+    // suppression definitive
     public function forceDelete(User $user)
     {
     	User::withTrashed()->FindOrFail($user->id)->forceDelete();
