@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 use App\User;
 class UserController extends Controller
 {
+	// index
     public function index()
     {
     	$users = User::all();
     	return view('users.index',compact('users'));
     }
 
+
+// afficher les supprimés
     public function showDeleted()
     {
     	$users = User::onlyTrashed()->get();
