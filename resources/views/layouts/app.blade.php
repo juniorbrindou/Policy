@@ -32,7 +32,10 @@
                     <ul class="navbar-nav mr-auto">
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('users')}}">Liste </a>
+                                <a class="nav-link" href="{{route('users')}}">Liste</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('users.trash')}}">Corbeille</a>
                             </li>
                         @endauth
                     </ul>
