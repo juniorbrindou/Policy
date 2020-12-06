@@ -20,13 +20,13 @@
                     <td>{{$user->email}}</td>
                     <td>
                         <form class="d-inline" method="POST" action="{{route('users.restaurer',$user->id)}}">
-                            @csrf
                             @method('PUT')
+                            @csrf
                             <button type="submit" class="bg-primary btn-sm ">Restaurer</button>
                         </form>
                         <form class="d-inline" method="POST" action="{{route('users.destroy',$user->id)}}">
-                            @csrf
                             @method('DELETE')
+                            @csrf
                             <button type="submit" class="bg-danger btn-sm ">Del</button>
                         </form>
                     </td>

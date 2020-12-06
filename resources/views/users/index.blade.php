@@ -19,15 +19,10 @@
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>
-                        <form class="d-inline" method="POST" action="{{route('users.restaurer',$user->id)}}">
-                            @csrf
-                            @method('PUT')
-                            <button type="submit" class="bg-primary btn-sm ">Restaurer</button>
-                        </form>
                         <form class="d-inline" method="POST" action="{{route('users.destroy',$user->id)}}">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="bg-danger btn-sm ">Del</button>
+                            <button type="submit" class="bg-danger btn-sm ">DELETE</button>
                         </form>
                     </td>
                 </tr>
