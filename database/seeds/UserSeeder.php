@@ -18,8 +18,16 @@ class UserSeeder extends Seeder
             User::create([
             	'name'=>$faker->firstName,
             	'email'=>$faker->email,
-            	'password'=>Hash::make('123456')
+            	'password'=>Hash::make('123456'),
+                'role'=>'user'
             ]);
         }
+
+        User::create([
+            'name'=>'admin',
+            'email'=>'admin@localhost.dev',
+            'password'=>'123456',
+            'role'=>'admin'
+        ]);
     }
 }

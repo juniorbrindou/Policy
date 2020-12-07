@@ -8,6 +8,7 @@
                 <tr>
                     <th>#</th>
                     <th>Name</th>
+                    <th>role</th>
                     <th>E-mail</th>
                     <th></th>
                 </tr>
@@ -17,13 +18,17 @@
                 <tr>
                     <td>{{$user->id}}</td>
                     <td>{{$user->name}}</td>
+                    <td>{{$user->role}}</td>
                     <td>{{$user->email}}</td>
                     <td>
+                        <button type="submit" class="bg-info btn-sm ">Modiffier</button>
+                        @can('delete',$user)
                         <form class="d-inline" method="POST" action="{{route('users.destroy',$user->id)}}">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="bg-danger btn-sm ">DELETE</button>
                         </form>
+                        @endcan
                     </td>
                 </tr>
                 @endforeach
