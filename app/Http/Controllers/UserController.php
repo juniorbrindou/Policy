@@ -33,6 +33,7 @@ class UserController extends Controller
 // suppression
 	public function destroy(User $user)
 	{
+		$this->authorize('delete',$user);
 		User::destroy($user->id);
 		return back()->with('info','Suppression Reussie!');
 	}
