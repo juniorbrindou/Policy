@@ -8,24 +8,24 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
-
-                    <div class="alert alert-danger">
+<div class="alert @can('index',User::class) alert-info @endcan @cannot('index',User::class) alert-danger @endcan ">
                         <p>Lister les utilisateurs</p>
                     </div>
-                    <div class="alert alert-danger">
-                        <p>Mettre a la corbeille les utilisateurs</p>
+                    <div class="alert @can('destroy',App\User::class) alert-info @endcan ">
+                        <p>Supprimer les utilisateurs</p>
                     </div>
-                    <div class="alert alert-danger">
+                    <div class="alert @can('update',App\User::class) alert-info @endcan ">
                         <p>modiffier les utilisateurs</p>
                     </div>
-                    <div class="alert alert-danger">
-                        <p> les utilisateurs</p>
+                    <div class="alert @can('create',App\User::class) alert-info @endcan ">
+                        <p>creer les utilisateurs</p>
+                    </div>
+                    <div class="alert @can('restaure',App\User::class) alert-info @endcan ">
+                        <p>Lister les utilisateurs</p>
+                    </div>
+                    <div class="alert @can('forceDelete',App\User::class) alert-info @endcan ">
+                        <p>Supprimer definitivement les utilisateurs</p>
                     </div>
 
                 </div>
