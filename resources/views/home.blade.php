@@ -14,7 +14,20 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+
+                    <div class="alert alert-danger">
+                        <p>Lister les utilisateurs</p>
+                    </div>
+                    <div class="alert alert-danger">
+                        <p>Mettre a la corbeille les utilisateurs</p>
+                    </div>
+                    <div class="alert alert-danger">
+                        <p>modiffier les utilisateurs</p>
+                    </div>
+                    <div class="alert alert-danger">
+                        <p> les utilisateurs</p>
+                    </div>
+
                 </div>
             </div>
         </div>

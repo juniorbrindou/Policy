@@ -31,9 +31,11 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         @auth
+                            @can('index',App\User::class)
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('users.users')}}">Liste</a>
                             </li>
+                            @endcan
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('users.trash')}}">Corbeille</a>
                             </li>

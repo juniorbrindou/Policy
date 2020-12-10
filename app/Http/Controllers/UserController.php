@@ -8,7 +8,7 @@ class UserController extends Controller
 // index
 	public function index()
 	{
-		$this->authorize('view',User::class);
+		$this->authorize('index', User::class);
 		$users = User::all();
 		return view('users.index',compact('users'));
 	}
@@ -17,7 +17,6 @@ class UserController extends Controller
 // afficher les supprimés
 	public function showDeleted()
 	{
-		$this->authorize('showDeleted',User::class);
 		$users = User::onlyTrashed()->get();
 		return view('users.trash',compact('users'));
 	}
@@ -35,7 +34,6 @@ class UserController extends Controller
 // suppression
 	public function destroy(User $user)
 	{
-		$this->authorize('delete',User::class);
 		User::destroy($user->id);
 		return back()->with('info','Suppression Reussie!');
 	}
