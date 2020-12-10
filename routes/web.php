@@ -6,7 +6,7 @@ use Illuminate\Foundation\Inspiring;
 
 Route::GET('/', function () {
 	$quote = Inspiring::quote();
-    return view('welcome',compact('quote'));
+	return view('welcome',compact('quote'));
 });
 
 Auth::routes();
