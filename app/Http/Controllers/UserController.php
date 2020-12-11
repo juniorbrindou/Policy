@@ -17,6 +17,7 @@ class UserController extends Controller
 // afficher les supprimés
 	public function showDeleted()
 	{
+		$this->authorize('showDeleted', User::class);
 		$users = User::onlyTrashed()->get();
 		return view('users.trash',compact('users'));
 	}
