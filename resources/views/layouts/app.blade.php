@@ -36,12 +36,14 @@
                                 <a class="nav-link" href="{{route('users.users')}}">Liste</a>
                             </li>
                             @endcan
+                            @can('showDeleted',App\User::class)
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('users.trash')}}">Corbeille</a>
                             </li>
+                            @endcan
                         @endauth
                     </ul>
-
+                    
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
