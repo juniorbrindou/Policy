@@ -10,3 +10,7 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+public/css/bootstrap.min.css
+public/css/font.google.api.css
+public/js/jquery-3.5.1.min.js
+public/js/bootstrap.min.js
