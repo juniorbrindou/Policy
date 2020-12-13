@@ -32,4 +32,9 @@ class UserPolicy
 
 	}
 
+	public function destroy(User $user)
+	{
+		dd($user);
+	}
+
 }
